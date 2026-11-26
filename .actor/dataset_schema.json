@@ -1,0 +1,64 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "required": ["type", "url", "title", "scrapedAt"],
+    "properties": {
+      "type": { "type": "string", "enum": ["product", "store"], "description": "Whether this row is a product or storefront." },
+      "productId": { "type": "string", "description": "TikTok Shop product ID." },
+      "storeId": { "type": "string", "description": "TikTok Shop seller ID on storefront rows." },
+      "url": { "type": "string", "format": "uri", "description": "Public TikTok Shop page URL." },
+      "title": { "type": "string", "description": "Product title or storefront name." },
+      "description": { "type": ["string", "null"] },
+      "brand": { "type": ["string", "null"] },
+      "categories": { "type": "array", "items": { "type": "object" } },
+      "priceMin": { "type": ["number", "null"] },
+      "priceMax": { "type": ["number", "null"] },
+      "originalPrice": { "type": ["number", "null"] },
+      "discount": { "type": ["string", "null"] },
+      "currency": { "type": ["string", "null"] },
+      "soldCount": { "type": ["number", "null"] },
+      "rating": { "type": ["number", "null"] },
+      "reviewCount": { "type": ["number", "null"] },
+      "ratingDistribution": { "type": ["object", "null"] },
+      "images": { "type": "array", "items": { "type": "string" } },
+      "videoUrls": { "type": "array", "items": { "type": "string" } },
+      "skus": { "type": "array", "items": { "type": "object" } },
+      "specs": { "type": "array", "items": { "type": "object" } },
+      "shipping": { "type": ["object", "null"] },
+      "promotionTags": { "type": "array", "items": { "type": "string" } },
+      "seller": { "type": "object", "description": "Normalized seller information and available feedback metrics." },
+      "reviews": { "type": "array", "items": { "type": "object" } },
+      "relatedVideos": { "type": "array", "items": { "type": "object" } },
+      "productCount": { "type": ["number", "null"], "description": "Total on-sale products reported by the storefront." },
+      "shopInfo": { "type": "object", "description": "Full public seller profile from the storefront response." },
+      "raw": { "type": "object", "description": "Source product component, only when requested." },
+      "scrapedAt": { "type": "string", "format": "date-time" }
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Products & sellers",
+      "transformation": {
+        "fields": ["type", "title", "url", "brand", "priceMin", "priceMax", "currency", "soldCount", "rating", "reviewCount", "productCount", "scrapedAt"]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "type": { "label": "Record type", "format": "text" },
+          "title": { "label": "Product or store", "format": "text" },
+          "url": { "label": "Open in TikTok Shop", "format": "link" },
+          "brand": { "label": "Brand", "format": "text" },
+          "priceMin": { "label": "Low price", "format": "number" },
+          "priceMax": { "label": "High price", "format": "number" },
+          "currency": { "label": "Currency", "format": "text" },
+          "soldCount": { "label": "Units sold", "format": "number" },
+          "rating": { "label": "Product rating", "format": "number" },
+          "reviewCount": { "label": "Reviews", "format": "number" },
+          "productCount": { "label": "Store catalog size", "format": "number" },
+          "scrapedAt": { "label": "Scraped at", "format": "date" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "actorSpecification": 1,
+  "name": "tiktok-shop-scraper",
+  "title": "TikTok Shop Scraper — Products, SKUs & Sellers",
+  "description": "Extract TikTok Shop product prices, SKU stock, sales, ratings, shipping and seller profiles from public product, storefront and category links.",
+  "version": "0.1",
+  "buildTag": "latest",
+  "dockerfile": "./Dockerfile",
+  "dockerContextDir": "..",
+  "readme": "../README.md",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}

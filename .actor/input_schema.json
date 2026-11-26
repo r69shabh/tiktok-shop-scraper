@@ -1,0 +1,87 @@
+{
+  "title": "TikTok Shop product and seller extraction",
+  "description": "Enter TikTok Shop product IDs or paste public product, storefront or category URLs. US is the only validated market.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "TikTok Shop URLs",
+      "type": "array",
+      "editor": "requestListSources",
+      "description": "Public TikTok Shop product, storefront (including the seller slug), or category URLs. Store and category URLs supply products from the first page.",
+      "prefill": [
+        { "url": "https://www.tiktok.com/shop/pdp/equip-prime-protein-21g-bioavailable-from-grass-fed-beef/1732282041767727408" },
+        { "url": "https://www.tiktok.com/shop/store/equip/7494352588342396208" }
+      ]
+    },
+    "productIds": {
+      "title": "Product IDs",
+      "type": "array",
+      "editor": "stringList",
+      "description": "Optional list of 19-digit TikTok Shop product IDs. Keep them as strings so the digits are not rounded."
+    },
+    "region": {
+      "title": "Marketplace",
+      "type": "string",
+      "editor": "select",
+      "description": "Applied to product IDs and legacy URLs. Canonical URLs retain their own market. Only US results have been validated.",
+      "enum": ["US", "GB", "BR", "FR", "DE", "ES", "IT", "IE", "JP", "MX", "ID", "TH", "VN", "MY", "PH", "SG"],
+      "default": "US"
+    },
+    "maxItems": {
+      "title": "Maximum product rows",
+      "type": "integer",
+      "editor": "number",
+      "description": "Maximum number of unique product records. Store records are billed separately and do not count towards this cap.",
+      "default": 30,
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "maxProductsPerListing": {
+      "title": "Products per storefront or category",
+      "type": "integer",
+      "editor": "number",
+      "description": "Maximum product detail requests from each first-page listing. Set to 0 for stores only, without following their products.",
+      "default": 20,
+      "minimum": 0,
+      "maximum": 100
+    },
+    "includeReviews": {
+      "title": "Include embedded reviews",
+      "type": "boolean",
+      "editor": "checkbox",
+      "description": "Include the public review sample embedded on the product page when present. Rating and review counts are collected either way.",
+      "default": true
+    },
+    "includeRelatedVideos": {
+      "title": "Include related videos",
+      "type": "boolean",
+      "editor": "checkbox",
+      "description": "Include related TikTok videos when embedded. Product gallery videos are collected either way.",
+      "default": false
+    },
+    "includeRaw": {
+      "title": "Include raw product data",
+      "type": "boolean",
+      "editor": "checkbox",
+      "description": "Add the source product component to each product row. This makes exports larger and may include public metadata not present in normalized fields.",
+      "default": false
+    },
+    "proxyConfiguration": {
+      "title": "Proxy configuration",
+      "type": "object",
+      "editor": "proxy",
+      "description": "Defaults to Apify Proxy on the platform. Disable the proxy for local runs without Apify credentials.",
+      "default": { "useApifyProxy": true }
+    },
+    "maxRetries": {
+      "title": "HTTP retries",
+      "type": "integer",
+      "editor": "number",
+      "description": "HTTP retries per URL before trying a bounded browser fallback. The first HTTP attempt is not included.",
+      "default": 2,
+      "minimum": 0,
+      "maximum": 5
+    }
+  }
+}
