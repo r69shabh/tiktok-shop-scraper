@@ -1,0 +1,24 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "TikTok Shop scraper output",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Results",
+      "description": "Full product and storefront records.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "overview": {
+      "type": "string",
+      "title": "Products & sellers overview",
+      "description": "Selected columns for browsing products and storefronts.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?view=overview"
+    },
+    "failedRequests": {
+      "type": "string",
+      "title": "Failed requests",
+      "description": "URLs that could not be scraped and the reason for each failure.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/FAILED_REQUESTS"
+    }
+  }
+}
