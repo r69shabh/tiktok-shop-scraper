@@ -1,8 +1,8 @@
-# TikTok Shop Scraper — Products, SKUs & Sellers
+# TikTok Shop Scraper — SKU Price & Stock Monitor
 
-Turn public TikTok Shop product and storefront pages into structured data. Start with the links or product IDs you already have. Get one row per product with variant-level prices and stock, plus a seller profile for each storefront URL you supply.
+Monitor prices and stock for known US TikTok Shop products. Paste the product or storefront URLs you already track, then run on demand or set up a schedule in Apify. Compare successive exports by `productId` and `skuId` to spot price changes, stockouts, and restocks when TikTok exposes those values.
 
-Use it to compare product assortments, check SKU availability, or monitor price and shipping changes. No TikTok login or cookies are needed.
+Each snapshot includes SKU options, current and original prices, stock counts, and available sales, ratings, and shipping data. Storefront rows add seller ratings, feedback metrics, followers, and catalog size. No TikTok login or cookies are needed. This Actor follows supplied links; it does not support keyword search or send change alerts itself.
 
 ## Quick start
 
@@ -13,7 +13,7 @@ Paste one or more public product, store, or category URLs into **TikTok Shop URL
 ```json
 {
   "startUrls": [
-    { "url": "https://www.tiktok.com/shop/pdp/equip-prime-protein-21g-bioavailable-from-grass-fed-beef/1732282041767727408" }
+    { "url": "https://www.tiktok.com/shop/pdp/gan-charger-tobrbe-retractable-80w-fast-charging-adapter-with-type-c-usb/1730891614229271019" }
   ],
   "productIds": ["1729383941730701675"],
   "region": "US",
@@ -27,8 +27,8 @@ Paste one or more public product, store, or category URLs into **TikTok Shop URL
 ```json
 {
   "startUrls": [
-    { "url": "https://www.tiktok.com/shop/store/equip/7494352588342396208" },
-    { "url": "https://www.tiktok.com/shop/c/health/700645" }
+    { "url": "https://www.tiktok.com/shop/store/case-mate/7495222674546788482" },
+    { "url": "https://shop.tiktok.com/us/c/beauty-personal-care/601450" }
   ],
   "maxProductsPerListing": 8,
   "maxItems": 15,
@@ -39,13 +39,13 @@ Paste one or more public product, store, or category URLs into **TikTok Shop URL
 | Input | Default | What it controls |
 | --- | --- | --- |
 | `startUrls`, `productIds` | — | Supply at least one; use public product, storefront-with-slug, or category links. |
-| `region` | `US` | Market for IDs and legacy links; explicit regional URLs keep their own market. |
+| `region` | `US` | US is the only supported market. Applies to IDs and legacy links. |
 | `maxItems` | 30 | Caps unique product rows. It does not cap storefront rows. |
 | `maxProductsPerListing` | 20 | Maximum product links followed from each listing's first page. Use 0 for storefront profiles only. |
 | `includeReviews` | true | Include embedded review samples. Counts and ratings are independent. |
 | `includeRelatedVideos` | false | Include related TikTok videos when the source embeds them. |
-| `includeRaw` | false | Include source product data for debugging or custom mappings. |
-| `proxyConfiguration` | Apify Proxy | For local runs without a token, set `{"useApifyProxy":false}`. |
+| `includeRaw` | false | Include the original source payload for products and storefronts. |
+| `proxyConfiguration` | Apify Proxy | Use the default unless your workflow requires a different proxy. |
 | `maxRetries` | 2 | HTTP retries per URL, before the bounded Chromium fallback. |
 
 ## Output
@@ -95,8 +95,8 @@ Example **product** row (trimmed; values are a point-in-time snapshot):
 | `skus` | Variant IDs, option attributes, current and original prices, and stock counts. |
 | `images`, `videoUrls`, `relatedVideos` | Catalog images, gallery video URLs and optional related videos. |
 | `shipping`, `promotionTags` | Available shipping fee, delivery estimate and displayed promotion labels. |
-| `seller`, `productCount`, `shopInfo` | Normalized seller metrics. Storefront rows also include the catalog size and full public shop profile. |
-| `reviews`, `raw` | Optional embedded review sample and optional source product object. |
+| `seller`, `productCount`, `shopInfo` | Normalized seller metrics. Storefront rows include catalog size and public shop details without storefront media payloads. |
+| `reviews`, `raw` | Optional embedded product review sample and optional original product or storefront payload. |
 
 ## Pricing
 
@@ -112,22 +112,10 @@ Example **product** row (trimmed; values are a point-in-time snapshot):
 
 ## FAQ and limitations
 
-**Which markets work?** US has been validated locally. Other market codes are available for experimentation; coverage can vary by region.
+**Which markets work?** The US marketplace is supported. Use US product and storefront URLs; other marketplaces are not validated.
 
 **Does it support keywords or full catalogs?** Keyword search is not supported yet. Store and category discovery is limited to products embedded on the first page. Provide direct product links for items beyond that page.
 
 **Why are some fields missing?** TikTok may omit or mask fields, and availability varies by page format and region. Missing values are `null` or empty arrays. Reviews are a sample, not the full history. Shipping estimates may depend on the viewing location, and media links can expire.
 
 **What if TikTok blocks a page?** A challenge or generic page is not a result. The Actor tries HTTP first, then at most 20 browser fallback attempts per run. It does not solve CAPTCHAs. Unreadable pages are logged and recorded with reasons under `FAILED_REQUESTS` in the run's key-value store.
-
-## Local development
-
-Use Node.js 20 and Chrome. Run `npm ci`, `npm run check`, and `npm run build`. To use a local Chrome executable for fallback, set `APIFY_CHROME_EXECUTABLE_PATH` to its path.
-
-```sh
-APIFY_LOCAL_STORAGE_DIR="$PWD/storage" apify run --input '{
-  "productIds":["1732282041767727408"],
-  "maxItems":1,
-  "proxyConfiguration":{"useApifyProxy":false}
-}'
-```

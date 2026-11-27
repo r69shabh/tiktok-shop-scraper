@@ -15,6 +15,8 @@ const num = (value: unknown): number | null => {
 const bool = (value: unknown): boolean | null => typeof value === 'boolean' ? value : null;
 const strings = (values: unknown[]) => [...new Set(values.map(str).filter((v): v is string => v !== null))];
 const metric = (data: Obj, key: string) => num(data[key]);
+const SPEC_PLACEHOLDERS = new Set(['NULL', 'N/A', '-']);
+const STOREFRONT_MEDIA_FIELDS = new Set(['shop_logo', 'background', 'shop_identity_label', 'store_brand_show', 'brand_story']);
 
 export type ParseOptions = {
     region: Region;
@@ -74,7 +76,11 @@ function productRow(components: Map<string, Obj>, target: Target, url: string, o
     const priceMin = num(price.min_sku_price) ?? (skuPrices.length ? Math.min(...skuPrices) : null);
     const priceMax = num(price.max_sku_price) ?? (price.is_interval_price === false && priceMin !== null
         ? priceMin : skuPrices.length ? Math.max(...skuPrices) : null);
-    const specs = objects(product.specifications).map((spec) => ({ name: str(spec.name), value: str(spec.value) }));
+    const specs = objects(product.specifications).flatMap((spec) => {
+        const name = str(spec.name);
+        const value = str(spec.value);
+        return name && value && !SPEC_PLACEHOLDERS.has(value.toUpperCase()) ? [{ name, value }] : [];
+    });
     const categories = objects(data.categories ?? obj(data.category_info).recommended_categories);
     const shipping = obj(product.logistic);
     const hasShippingModule = Object.keys(obj(product.shipping_module)).length > 0;
@@ -169,8 +175,9 @@ function listing(components: Map<string, Obj>, target: Target, url: string, opti
             storeId: target.id,
             seller: sellerInfo(shop, {}, options.region),
             productCount: num(shop.on_sell_product_count),
-            shopInfo: shop,
+            shopInfo: Object.fromEntries(Object.entries(shop).filter(([key]) => !STOREFRONT_MEDIA_FIELDS.has(key))),
             scrapedAt,
+            ...(options.includeRaw ? { raw: shop } : {}),
         } : null,
     };
 }
