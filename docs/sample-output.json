@@ -1,17 +1,145 @@
 [
   {
     "type": "product",
+    "url": "https://shop.tiktok.com/us/pdp/gan-charger-tobrbe-retractable-80w-fast-charging-adapter-with-type-c-usb/1730891614229271019",
+    "title": "TOBRBE 3 in 1 GaN Charger, Retractable 80W MAX Fast Charger Block with Type-C Cable & 2 USB Ports, Portable Adapter iPhone Smartphone Electronic, Yellow, Cellphone, Folding Charging",
+    "scrapedAt": "2026-11-27T16:47:32.962Z",
+    "productId": "1730891614229271019",
+    "brand": "TOBRBE",
+    "categories": [
+      {
+        "id": "601739",
+        "name": "Phones & Electronics"
+      },
+      {
+        "id": "909064",
+        "name": "Mobile Phone Accessories"
+      },
+      {
+        "id": "601937",
+        "name": "Cables, Chargers & Adapters"
+      },
+      {
+        "id": "1127184",
+        "name": "Adapters"
+      }
+    ],
+    "priceMin": 19.01,
+    "priceMax": 19.01,
+    "originalPrice": 29.08,
+    "discount": "-35%",
+    "currency": "USD",
+    "soldCount": 41968,
+    "rating": 4.2,
+    "reviewCount": 3581,
+    "ratingDistribution": {
+      "1": 411,
+      "2": 135,
+      "3": 198,
+      "4": 351,
+      "5": 2487
+    },
+    "shipping": {
+      "method": "Shipped by seller",
+      "freeShipping": true,
+      "fee": 0,
+      "currency": "USD",
+      "deliveryMinDays": 6,
+      "deliveryMaxDays": 12,
+      "leadTime": "Dec 3 - Dec 9",
+      "notes": [
+        "Free shipping",
+        "Estimated delivery Dec 3 – 9"
+      ]
+    },
+    "promotionTags": [
+      "Free shipping"
+    ],
+    "seller": {
+      "id": "7495561244401306091",
+      "name": "COMFMET-US",
+      "url": "https://shop.tiktok.com/us/store/comfmet-us/7495561244401306091",
+      "followers": 242,
+      "soldCount": 298844,
+      "productCount": 156,
+      "rating": 4.4,
+      "reviewCount": 27015,
+      "videoCount": 235,
+      "feedbackMetrics": [
+        {
+          "name": "Positive feedback",
+          "value": "82%",
+          "score": 0.82,
+          "assessment": "Good"
+        },
+        {
+          "name": "Chat satisfaction",
+          "value": "100%",
+          "score": 1,
+          "assessment": "Excellent"
+        },
+        {
+          "name": "Issue resolution",
+          "value": "<27h",
+          "score": 26.9,
+          "assessment": "Good"
+        }
+      ]
+    },
+    "skus": [
+      {
+        "skuId": "1730891614229336555",
+        "attributes": [
+          {
+            "name": "Color",
+            "value": "Yellow"
+          }
+        ],
+        "price": 19.01,
+        "originalPrice": 29.08,
+        "stock": 197
+      },
+      {
+        "skuId": "1731133018277974507",
+        "attributes": [
+          {
+            "name": "Color",
+            "value": "Green"
+          }
+        ],
+        "price": 19.01,
+        "originalPrice": 29.08,
+        "stock": 396
+      }
+    ]
+  },
+  {
+    "type": "product",
     "url": "https://shop.tiktok.com/view/product/1729383941730701675?region=US",
     "title": "UNbrush Detangling Hair Brush by FHI Heat",
-    "scrapedAt": "2026-11-27T09:19:21.951Z",
+    "scrapedAt": "2026-11-27T16:47:36.603Z",
     "productId": "1729383941730701675",
     "brand": null,
+    "categories": [
+      {
+        "id": "601450",
+        "name": "Beauty & Personal Care"
+      },
+      {
+        "id": "848904",
+        "name": "Haircare & Styling"
+      },
+      {
+        "id": "851984",
+        "name": "Hair Brushes & Combs"
+      }
+    ],
     "priceMin": 23.4,
     "priceMax": 28.6,
     "originalPrice": null,
     "discount": null,
     "currency": "USD",
-    "soldCount": 952080,
+    "soldCount": 952083,
     "rating": 4.6,
     "reviewCount": 76916,
     "ratingDistribution": null,
@@ -20,12 +148,12 @@
       "freeShipping": true,
       "fee": 0,
       "currency": "USD",
-      "deliveryMinDays": 5,
-      "deliveryMaxDays": 10,
-      "leadTime": "Dec 2 - Dec 7",
+      "deliveryMinDays": 8,
+      "deliveryMaxDays": 13,
+      "leadTime": "Dec 5 - Dec 10",
       "notes": [
         "Free shipping",
-        "Estimated delivery Dec 2 – 7"
+        "Estimated delivery Dec 5 – 10"
       ]
     },
     "promotionTags": [],
@@ -37,6 +165,8 @@
       "soldCount": 1078455,
       "productCount": 49,
       "rating": 4.6,
+      "reviewCount": 89228,
+      "videoCount": 307,
       "feedbackMetrics": [
         {
           "name": "Positive feedback",
@@ -69,123 +199,159 @@
         ],
         "price": 28.6,
         "originalPrice": null,
-        "stock": 2940
+        "stock": 2939
+      },
+      {
+        "skuId": "1729410560039162219",
+        "attributes": [
+          {
+            "name": "Color",
+            "value": "Amethyst"
+          }
+        ],
+        "price": 28.6,
+        "originalPrice": null,
+        "stock": 2935
       }
     ]
   },
   {
     "type": "product",
-    "url": "https://shop.tiktok.com/us/pdp/gan-charger-tobrbe-retractable-80w-fast-charging-adapter-with-type-c-usb/1730891614229271019",
-    "title": "TOBRBE 3 in 1 GaN Charger, Retractable 80W MAX Fast Charger Block with Type-C Cable & 2 USB Ports, Portable Adapter iPhone Smartphone Electronic, Yellow, Cellphone, Folding Charging",
-    "scrapedAt": "2026-11-27T09:19:20.500Z",
-    "productId": "1730891614229271019",
-    "brand": "TOBRBE",
-    "priceMin": 18.56,
-    "priceMax": 18.56,
-    "originalPrice": 28.4,
-    "discount": "-35%",
+    "url": "https://shop.tiktok.com/view/product/1729406192892088964?region=US",
+    "title": "Homeika H318 Cordless Stick Vacuum Cleaner - 300W Motor Home Cleaning Machine, 23KPa, 3.17lb Lightweight, 48mins Runtime Battery, 3 Suction Modes, LED Display & Under-Furniture Light, 1.4L, 0.1um Multi-Filter Vacuums, Sofa Brush for Hard Floor/Carpet",
+    "scrapedAt": "2026-11-27T16:47:38.301Z",
+    "productId": "1729406192892088964",
+    "brand": null,
+    "categories": [
+      {
+        "id": "600942",
+        "name": "Household Appliances"
+      },
+      {
+        "id": "844808",
+        "name": "Home Appliances"
+      },
+      {
+        "id": "601102",
+        "name": "Vacuums & Floor Care"
+      }
+    ],
+    "priceMin": 82.99,
+    "priceMax": 150.39,
+    "originalPrice": 139.99,
+    "discount": null,
     "currency": "USD",
-    "soldCount": 41968,
-    "rating": 4.2,
-    "reviewCount": 3581,
-    "ratingDistribution": {
-      "1": 411,
-      "2": 135,
-      "3": 198,
-      "4": 351,
-      "5": 2487
-    },
+    "soldCount": 186401,
+    "rating": 4.4,
+    "reviewCount": 17042,
+    "ratingDistribution": null,
     "shipping": {
-      "method": "Shipped by seller",
+      "method": "Fulfilled by TikTok - Standard Shipping",
       "freeShipping": true,
       "fee": 0,
       "currency": "USD",
       "deliveryMinDays": 6,
-      "deliveryMaxDays": 12,
-      "leadTime": "Dec 3 - Dec 9",
+      "deliveryMaxDays": 9,
+      "leadTime": "Dec 3 - Dec 6",
       "notes": [
         "Free shipping",
-        "Estimated delivery Dec 3 – 9"
+        "Estimated delivery Dec 3 – 6"
       ]
     },
     "promotionTags": [],
     "seller": {
-      "id": "7495561244401306091",
-      "name": "COMFMET-US",
-      "url": "https://shop.tiktok.com/us/store/comfmet-us/7495561244401306091",
-      "followers": 241,
-      "soldCount": 298844,
-      "productCount": 155,
-      "rating": 4.4,
+      "id": "7495333555656034948",
+      "name": "Homeika",
+      "url": "https://shop.tiktok.com/us/store/homeika/7495333555656034948",
+      "followers": 44268,
+      "soldCount": 801071,
+      "productCount": 24,
+      "rating": 4.5,
+      "reviewCount": 67202,
+      "videoCount": 3490,
       "feedbackMetrics": [
         {
           "name": "Positive feedback",
-          "value": "82%",
-          "score": 0.82,
+          "value": "83%",
+          "score": 0.83,
           "assessment": "Good"
         },
         {
           "name": "Chat satisfaction",
-          "value": "100%",
-          "score": 1,
-          "assessment": "Excellent"
+          "value": "Fair",
+          "score": 0.62,
+          "assessment": "Fair"
         },
         {
           "name": "Issue resolution",
-          "value": "<27h",
-          "score": 26.9,
+          "value": "<42h",
+          "score": 41.7,
           "assessment": "Good"
         }
       ]
     },
     "skus": [
       {
-        "skuId": "1730891614229336555",
+        "skuId": "1729406192892220036",
         "attributes": [
           {
             "name": "Color",
-            "value": "Yellow"
+            "value": "black"
           }
         ],
-        "price": 18.56,
-        "originalPrice": 28.4,
-        "stock": 197
+        "price": 150.39,
+        "originalPrice": 159.99,
+        "stock": 143
+      },
+      {
+        "skuId": "1729406192892351108",
+        "attributes": [
+          {
+            "name": "Color",
+            "value": "pink"
+          }
+        ],
+        "price": 84.99,
+        "originalPrice": 139.99,
+        "stock": 48
       }
     ]
   },
   {
     "type": "store",
-    "url": "https://shop.tiktok.com/us/store/equip/7494352588342396208",
-    "title": "Equip",
-    "scrapedAt": "2026-11-27T09:19:15.857Z",
-    "storeId": "7494352588342396208",
-    "productCount": 10,
+    "url": "https://shop.tiktok.com/us/store/case-mate/7495222674546788482",
+    "title": "Case-Mate",
+    "scrapedAt": "2026-11-27T16:47:27.645Z",
+    "storeId": "7495222674546788482",
+    "productCount": 301,
     "seller": {
-      "id": "7494352588342396208",
-      "name": "Equip",
-      "url": "https://www.tiktok.com/shop/store/equip/7494352588342396208",
-      "followers": 2724,
-      "soldCount": 9615,
-      "productCount": 10,
-      "rating": 4.5,
+      "id": "7495222674546788482",
+      "name": "Case-Mate",
+      "url": "https://www.tiktok.com/shop/store/case-mate/7495222674546788482",
+      "followers": 157439,
+      "soldCount": 209819,
+      "productCount": 301,
+      "rating": 4.7,
+      "reviewCount": 16154,
+      "videoCount": 2451,
       "feedbackMetrics": [
         {
           "name": "Positive feedback",
-          "value": "87%",
-          "score": 0.87,
-          "assessment": "Good"
-        },
-        {
-          "name": "Issue resolution",
-          "value": "<3h",
-          "score": 2.8,
+          "value": "94%",
+          "score": 0.94,
           "assessment": "Excellent"
         },
         {
           "name": "Chat satisfaction",
-          "value": "100%",
-          "score": 1,
-          "assessment": "Excellent"
+          "value": "88%",
+          "score": 0.88,
+          "assessment": "Good"
+        },
+        {
+          "name": "Issue resolution",
+          "value": "<43h",
+          "score": 42.5,
+          "assessment": "Good"
         }
       ]
     }

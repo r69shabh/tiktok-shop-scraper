@@ -62,7 +62,11 @@ test('drops placeholder specs without losing meaningful short values', () => {
         { name: 'Not applicable', value: 'N/A' },
         { name: 'Dash', value: '-' },
         { name: 'Empty', value: '' },
+        { name: 'Manufacturer postal code', value: 'PD' },
+        { name: 'Manufacturer address (city)', value: 'DG' },
+        { name: 'Manufacturer address (province)', value: 'DG' },
         { name: 'Connector', value: 'USB' },
+        { name: 'Charging standard', value: 'PD' },
     ];
     const html = fixture('product').replace('"specifications":[', `"specifications":[${JSON.stringify(specs).slice(1, -1)},`);
     const target = identifyUrl(equip, 'US');
@@ -71,6 +75,7 @@ test('drops placeholder specs without losing meaningful short values', () => {
     assert.equal(result.kind, 'product');
     assert.deepEqual(result.row.specs.filter(({ name }) => specs.some((spec) => spec.name === name)), [
         { name: 'Connector', value: 'USB' },
+        { name: 'Charging standard', value: 'PD' },
     ]);
     assert.equal(result.row.brand, 'Equip');
 });

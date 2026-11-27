@@ -16,6 +16,11 @@ const bool = (value: unknown): boolean | null => typeof value === 'boolean' ? va
 const strings = (values: unknown[]) => [...new Set(values.map(str).filter((v): v is string => v !== null))];
 const metric = (data: Obj, key: string) => num(data[key]);
 const SPEC_PLACEHOLDERS = new Set(['NULL', 'N/A', '-']);
+const ADDRESS_SPEC_PLACEHOLDERS = new Map([
+    ['manufacturer postal code', 'PD'],
+    ['manufacturer address (city)', 'DG'],
+    ['manufacturer address (province)', 'DG'],
+]);
 const STOREFRONT_MEDIA_FIELDS = new Set(['shop_logo', 'background', 'shop_identity_label', 'store_brand_show', 'brand_story']);
 
 export type ParseOptions = {
@@ -79,7 +84,10 @@ function productRow(components: Map<string, Obj>, target: Target, url: string, o
     const specs = objects(product.specifications).flatMap((spec) => {
         const name = str(spec.name);
         const value = str(spec.value);
-        return name && value && !SPEC_PLACEHOLDERS.has(value.toUpperCase()) ? [{ name, value }] : [];
+        if (!name || !value) return [];
+        const normalizedValue = value.toUpperCase();
+        if (SPEC_PLACEHOLDERS.has(normalizedValue) || ADDRESS_SPEC_PLACEHOLDERS.get(name.toLowerCase()) === normalizedValue) return [];
+        return [{ name, value }];
     });
     const categories = objects(data.categories ?? obj(data.category_info).recommended_categories);
     const shipping = obj(product.logistic);

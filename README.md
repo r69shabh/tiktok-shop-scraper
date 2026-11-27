@@ -50,38 +50,51 @@ Paste one or more public product, store, or category URLs into **TikTok Shop URL
 
 ## Output
 
-Example **product** row (trimmed; values are a point-in-time snapshot):
+Example **product** row (trimmed to two variants; values are a point-in-time snapshot):
 
 ```json
 {
   "type": "product",
-  "productId": "1732282041767727408",
-  "url": "https://shop.tiktok.com/us/pdp/equip-prime-protein-21g-bioavailable-from-grass-fed-beef/1732282041767727408",
-  "title": "Equip Foods Prime Clean Protein Powder",
-  "brand": "Equip",
-  "priceMin": 44.99,
-  "priceMax": 88.39,
+  "productId": "1730891614229271019",
+  "url": "https://shop.tiktok.com/us/pdp/gan-charger-tobrbe-retractable-80w-fast-charging-adapter-with-type-c-usb/1730891614229271019",
+  "title": "TOBRBE 3 in 1 GaN Charger, Retractable 80W MAX Fast Charger Block with Type-C Cable & 2 USB Ports, Portable Adapter iPhone Smartphone Electronic, Yellow, Cellphone, Folding Charging",
+  "brand": "TOBRBE",
+  "priceMin": 19.01,
+  "priceMax": 19.01,
   "currency": "USD",
-  "soldCount": 5894,
-  "rating": 4.5,
-  "reviewCount": 332,
-  "ratingDistribution": { "1": 22, "2": 15, "3": 11, "4": 27, "5": 257 },
   "skus": [
     {
-      "skuId": "1732282042194891056",
-      "attributes": [{ "name": "Flavor", "value": "Variety Pack - 10 Servings" }],
-      "price": 44.99,
-      "originalPrice": null,
-      "stock": 117
+      "skuId": "1730891614229336555",
+      "attributes": [
+        {
+          "name": "Color",
+          "value": "Yellow"
+        }
+      ],
+      "price": 19.01,
+      "originalPrice": 29.08,
+      "stock": 197
+    },
+    {
+      "skuId": "1731133018277974507",
+      "attributes": [
+        {
+          "name": "Color",
+          "value": "Green"
+        }
+      ],
+      "price": 19.01,
+      "originalPrice": 29.08,
+      "stock": 396
     }
   ],
   "seller": {
-    "id": "7494352588342396208",
-    "name": "Equip",
-    "followers": 2724,
-    "soldCount": 9591,
-    "productCount": 10,
-    "rating": 4.5
+    "id": "7495561244401306091",
+    "name": "COMFMET-US",
+    "followers": 242,
+    "soldCount": 298844,
+    "productCount": 156,
+    "rating": 4.4
   }
 }
 ```
