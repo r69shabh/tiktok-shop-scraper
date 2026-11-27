@@ -1,0 +1,193 @@
+[
+  {
+    "type": "product",
+    "url": "https://shop.tiktok.com/view/product/1729383941730701675?region=US",
+    "title": "UNbrush Detangling Hair Brush by FHI Heat",
+    "scrapedAt": "2026-11-27T09:19:21.951Z",
+    "productId": "1729383941730701675",
+    "brand": null,
+    "priceMin": 23.4,
+    "priceMax": 28.6,
+    "originalPrice": null,
+    "discount": null,
+    "currency": "USD",
+    "soldCount": 952080,
+    "rating": 4.6,
+    "reviewCount": 76916,
+    "ratingDistribution": null,
+    "shipping": {
+      "method": "Standard shipping",
+      "freeShipping": true,
+      "fee": 0,
+      "currency": "USD",
+      "deliveryMinDays": 5,
+      "deliveryMaxDays": 10,
+      "leadTime": "Dec 2 - Dec 7",
+      "notes": [
+        "Free shipping",
+        "Estimated delivery Dec 2 – 7"
+      ]
+    },
+    "promotionTags": [],
+    "seller": {
+      "id": "7494873721524226411",
+      "name": "BeautyChoiceUSA",
+      "url": "https://shop.tiktok.com/us/store/beautychoiceusa/7494873721524226411",
+      "followers": 50626,
+      "soldCount": 1078455,
+      "productCount": 49,
+      "rating": 4.6,
+      "feedbackMetrics": [
+        {
+          "name": "Positive feedback",
+          "value": "85%",
+          "score": 0.85,
+          "assessment": "Good"
+        },
+        {
+          "name": "Issue resolution",
+          "value": "<11h",
+          "score": 10.2,
+          "assessment": "Excellent"
+        },
+        {
+          "name": "Chat satisfaction",
+          "value": "100%",
+          "score": 1,
+          "assessment": "Excellent"
+        }
+      ]
+    },
+    "skus": [
+      {
+        "skuId": "1729410950923260267",
+        "attributes": [
+          {
+            "name": "Color",
+            "value": "Rose Quartz"
+          }
+        ],
+        "price": 28.6,
+        "originalPrice": null,
+        "stock": 2940
+      }
+    ]
+  },
+  {
+    "type": "product",
+    "url": "https://shop.tiktok.com/us/pdp/gan-charger-tobrbe-retractable-80w-fast-charging-adapter-with-type-c-usb/1730891614229271019",
+    "title": "TOBRBE 3 in 1 GaN Charger, Retractable 80W MAX Fast Charger Block with Type-C Cable & 2 USB Ports, Portable Adapter iPhone Smartphone Electronic, Yellow, Cellphone, Folding Charging",
+    "scrapedAt": "2026-11-27T09:19:20.500Z",
+    "productId": "1730891614229271019",
+    "brand": "TOBRBE",
+    "priceMin": 18.56,
+    "priceMax": 18.56,
+    "originalPrice": 28.4,
+    "discount": "-35%",
+    "currency": "USD",
+    "soldCount": 41968,
+    "rating": 4.2,
+    "reviewCount": 3581,
+    "ratingDistribution": {
+      "1": 411,
+      "2": 135,
+      "3": 198,
+      "4": 351,
+      "5": 2487
+    },
+    "shipping": {
+      "method": "Shipped by seller",
+      "freeShipping": true,
+      "fee": 0,
+      "currency": "USD",
+      "deliveryMinDays": 6,
+      "deliveryMaxDays": 12,
+      "leadTime": "Dec 3 - Dec 9",
+      "notes": [
+        "Free shipping",
+        "Estimated delivery Dec 3 – 9"
+      ]
+    },
+    "promotionTags": [],
+    "seller": {
+      "id": "7495561244401306091",
+      "name": "COMFMET-US",
+      "url": "https://shop.tiktok.com/us/store/comfmet-us/7495561244401306091",
+      "followers": 241,
+      "soldCount": 298844,
+      "productCount": 155,
+      "rating": 4.4,
+      "feedbackMetrics": [
+        {
+          "name": "Positive feedback",
+          "value": "82%",
+          "score": 0.82,
+          "assessment": "Good"
+        },
+        {
+          "name": "Chat satisfaction",
+          "value": "100%",
+          "score": 1,
+          "assessment": "Excellent"
+        },
+        {
+          "name": "Issue resolution",
+          "value": "<27h",
+          "score": 26.9,
+          "assessment": "Good"
+        }
+      ]
+    },
+    "skus": [
+      {
+        "skuId": "1730891614229336555",
+        "attributes": [
+          {
+            "name": "Color",
+            "value": "Yellow"
+          }
+        ],
+        "price": 18.56,
+        "originalPrice": 28.4,
+        "stock": 197
+      }
+    ]
+  },
+  {
+    "type": "store",
+    "url": "https://shop.tiktok.com/us/store/equip/7494352588342396208",
+    "title": "Equip",
+    "scrapedAt": "2026-11-27T09:19:15.857Z",
+    "storeId": "7494352588342396208",
+    "productCount": 10,
+    "seller": {
+      "id": "7494352588342396208",
+      "name": "Equip",
+      "url": "https://www.tiktok.com/shop/store/equip/7494352588342396208",
+      "followers": 2724,
+      "soldCount": 9615,
+      "productCount": 10,
+      "rating": 4.5,
+      "feedbackMetrics": [
+        {
+          "name": "Positive feedback",
+          "value": "87%",
+          "score": 0.87,
+          "assessment": "Good"
+        },
+        {
+          "name": "Issue resolution",
+          "value": "<3h",
+          "score": 2.8,
+          "assessment": "Excellent"
+        },
+        {
+          "name": "Chat satisfaction",
+          "value": "100%",
+          "score": 1,
+          "assessment": "Excellent"
+        }
+      ]
+    }
+  }
+]
