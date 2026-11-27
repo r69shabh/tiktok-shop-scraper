@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
   "name": "tiktok-shop-scraper",
-  "title": "TikTok Shop Scraper — Products, SKUs & Sellers",
-  "description": "Extract TikTok Shop product prices, SKU stock, sales, ratings, shipping and seller profiles from public product, storefront and category links.",
+  "title": "TikTok Shop Scraper — SKU Price & Stock Monitor",
+  "description": "Monitor known US TikTok Shop URLs on a schedule. Export per-SKU prices and stock, seller ratings and catalog size, plus product sales and review metrics.",
   "version": "0.1",
   "buildTag": "latest",
   "dockerfile": "./Dockerfile",

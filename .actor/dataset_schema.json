@@ -31,8 +31,8 @@
       "reviews": { "type": "array", "items": { "type": "object" } },
       "relatedVideos": { "type": "array", "items": { "type": "object" } },
       "productCount": { "type": ["number", "null"], "description": "Total on-sale products reported by the storefront." },
-      "shopInfo": { "type": "object", "description": "Full public seller profile from the storefront response." },
-      "raw": { "type": "object", "description": "Source product component, only when requested." },
+      "shopInfo": { "type": "object", "description": "Public seller profile without the storefront media payloads." },
+      "raw": { "type": "object", "description": "Original product or storefront source payload, only when requested." },
       "scrapedAt": { "type": "string", "format": "date-time" }
     }
   },

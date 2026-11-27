@@ -1,6 +1,6 @@
 {
-  "title": "TikTok Shop product and seller extraction",
-  "description": "Enter TikTok Shop product IDs or paste public product, storefront or category URLs. US is the only validated market.",
+  "title": "TikTok Shop price and stock monitoring",
+  "description": "Paste known US TikTok Shop product or storefront URLs to collect SKU prices, stock and seller metrics. Product IDs and category links also work.",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
@@ -10,7 +10,8 @@
       "editor": "requestListSources",
       "description": "Public TikTok Shop product, storefront (including the seller slug), or category URLs. Store and category URLs supply products from the first page.",
       "prefill": [
-        { "url": "https://www.tiktok.com/shop/pdp/equip-prime-protein-21g-bioavailable-from-grass-fed-beef/1732282041767727408" },
+        { "url": "https://www.tiktok.com/shop/pdp/gan-charger-tobrbe-retractable-80w-fast-charging-adapter-with-type-c-usb/1730891614229271019" },
+        { "url": "https://shop.tiktok.com/view/product/1729383941730701675?region=US" },
         { "url": "https://www.tiktok.com/shop/store/equip/7494352588342396208" }
       ]
     },
@@ -24,8 +25,8 @@
       "title": "Marketplace",
       "type": "string",
       "editor": "select",
-      "description": "Applied to product IDs and legacy URLs. Canonical URLs retain their own market. Only US results have been validated.",
-      "enum": ["US", "GB", "BR", "FR", "DE", "ES", "IT", "IE", "JP", "MX", "ID", "TH", "VN", "MY", "PH", "SG"],
+      "description": "US is the only supported market. This value is applied to product IDs and legacy URLs.",
+      "enum": ["US"],
       "default": "US"
     },
     "maxItems": {
@@ -34,6 +35,7 @@
       "editor": "number",
       "description": "Maximum number of unique product records. Store records are billed separately and do not count towards this cap.",
       "default": 30,
+      "prefill": 2,
       "minimum": 1,
       "maximum": 1000
     },
@@ -43,6 +45,7 @@
       "editor": "number",
       "description": "Maximum product detail requests from each first-page listing. Set to 0 for stores only, without following their products.",
       "default": 20,
+      "prefill": 0,
       "minimum": 0,
       "maximum": 100
     },
@@ -61,10 +64,10 @@
       "default": false
     },
     "includeRaw": {
-      "title": "Include raw product data",
+      "title": "Include raw source data",
       "type": "boolean",
       "editor": "checkbox",
-      "description": "Add the source product component to each product row. This makes exports larger and may include public metadata not present in normalized fields.",
+      "description": "Add the source product or storefront payload to each row. This makes exports larger and may include public metadata not present in normalized fields.",
       "default": false
     },
     "proxyConfiguration": {

@@ -55,6 +55,31 @@ test('parses legacy HTML with an empty embedded review sample and missing rating
     assert.equal(result.row.ratingDistribution, null);
 });
 
+test('drops placeholder specs without losing meaningful short values', () => {
+    const specs = [
+        { name: 'Missing uppercase', value: 'NULL' },
+        { name: 'Missing lowercase', value: ' null ' },
+        { name: 'Not applicable', value: 'N/A' },
+        { name: 'Dash', value: '-' },
+        { name: 'Empty', value: '' },
+        { name: 'Manufacturer postal code', value: 'PD' },
+        { name: 'Manufacturer address (city)', value: 'DG' },
+        { name: 'Manufacturer address (province)', value: 'DG' },
+        { name: 'Connector', value: 'USB' },
+        { name: 'Charging standard', value: 'PD' },
+    ];
+    const html = fixture('product').replace('"specifications":[', `"specifications":[${JSON.stringify(specs).slice(1, -1)},`);
+    const target = identifyUrl(equip, 'US');
+    assert.ok(target);
+    const result = parsePage(html, target, equip, options);
+    assert.equal(result.kind, 'product');
+    assert.deepEqual(result.row.specs.filter(({ name }) => specs.some((spec) => spec.name === name)), [
+        { name: 'Connector', value: 'USB' },
+        { name: 'Charging standard', value: 'PD' },
+    ]);
+    assert.equal(result.row.brand, 'Equip');
+});
+
 test('honors video, review, and raw options independently', () => {
     const result = parse('product-videos', charger, { includeRelatedVideos: true, includeReviews: false, includeRaw: true });
     assert.equal(result.kind, 'product');
@@ -74,9 +99,18 @@ test('extracts a seller row and distinct first-page product detail URLs from a s
     assert.equal(result.row?.storeId, '7494352588342396208');
     assert.equal(result.row?.productCount, 10);
     assert.equal(result.row?.shopInfo.region, 'US');
+    assert.equal('shop_logo' in result.row!.shopInfo, false);
+    assert.equal('raw' in result.row!, false);
     assert.equal(result.hasMore, false);
     assert.equal(result.products.length, 10);
     assert.equal(result.products[0].url, equip);
+});
+
+test('includes the original storefront media payload only with raw output enabled', () => {
+    const result = parse('store', storeUrl, { includeRaw: true });
+    assert.equal(result.kind, 'listing');
+    assert.ok(result.row?.raw?.shop_logo);
+    assert.equal('shop_logo' in result.row.shopInfo, false);
 });
 
 test('extracts category products without producing a dataset row', () => {
